@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#191622</color>
+    <color name="colorPrimaryDark">#13111b</color>
+    <color name="colorPrimaryLight">#201b2d</color>
+    <color name="colorText">#aaaaaa</color>
+    <color name="colorGreen">#67e474</color>
+    <color name="colorCyan">#47c2e1</color>
+    <color name="colorPink">#f179c6</color>
+    <color name="colorPriority1">#007fff</color>
+    <color name="colorPriority2">#7fff00</color>
+    <color name="colorPriority3">#ffff00</color>
+    <color name="colorPriority4">#ff9900</color>
+    <color name="colorPriority5">#ff2020</color>
+</resources>
