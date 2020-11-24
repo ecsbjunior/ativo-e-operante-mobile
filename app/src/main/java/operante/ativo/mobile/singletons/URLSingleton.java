@@ -8,7 +8,7 @@ public class URLSingleton {
         return URL;
     }
 
-    public static String getURLWithApiKey() { return URL + "?apikey=" + api_key; }
+    public static String getApiKey() { return api_key; }
 
     public static void setApiKey(String apiKey) { api_key = apiKey; }
 }

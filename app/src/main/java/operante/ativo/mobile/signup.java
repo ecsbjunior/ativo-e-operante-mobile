@@ -48,7 +48,7 @@ public class signup extends AppCompatActivity {
         else {
             try {
                 WebServicePostAsync WSAsync = new WebServicePostAsync();
-                String URL = String.format(URLSingleton.getURL() + "/users?cpf=%s&email=%s", txtSUCPF.getText(), txtEmail.getText());
+                String URL = String.format(URLSingleton.getURL() + "/users?cpf=%s&email=%s&apikey=%s", txtSUCPF.getText(), txtEmail.getText(), URLSingleton.getApiKey());
                 String ans = WSAsync.execute(URL).get();
                 JSONObject json = new JSONObject(ans);
 
@@ -60,6 +60,8 @@ public class signup extends AppCompatActivity {
                     editor.putString("api_key", json.getString("apikey"));
 
                     editor.commit();
+
+                    URLSingleton.setApiKey(spref.getString("api_key", ""));
 
                     Intent intent = new Intent(this, complaints.class);
                     startActivity(intent);

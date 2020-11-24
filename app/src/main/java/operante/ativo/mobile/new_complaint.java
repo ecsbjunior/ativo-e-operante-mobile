@@ -89,7 +89,7 @@ public class new_complaint extends AppCompatActivity {
             try {
                 WebServicePostAsync WSAsync = new WebServicePostAsync();
                 String URL = String.format(
-                    "%s/%s?title=%s&description=%s&urgency=%s&user_id=%s&competentorgan_id=%s&problemtype_id=%s",
+                    "%s/%s?title=%s&description=%s&urgency=%s&user_id=%s&competentorgan_id=%s&problemtype_id=%s&apikey=%s",
                     URLSingleton.getURL(),
                     "complaints",
                     title,
@@ -97,7 +97,8 @@ public class new_complaint extends AppCompatActivity {
                     urgency+"",
                     user_id+"",
                     competentorgan_id+"",
-                    problemtype_id+""
+                    problemtype_id+"",
+                    URLSingleton.getApiKey()
                 );
                 String ans = WSAsync.execute(URL).get();
                 JSONObject json = new JSONObject(ans);
@@ -120,7 +121,7 @@ public class new_complaint extends AppCompatActivity {
     private void loadProblemTypes() {
         try {
             WebServiceAsync WSAsync = new WebServiceAsync();
-            String URL = URLSingleton.getURL() + "/problem-types";
+            String URL = URLSingleton.getURL() + "/problem-types?apikey=" + URLSingleton.getApiKey();
             String ans = WSAsync.execute(URL).get();
             JSONArray jsonArray = new JSONArray(ans);
 
@@ -137,7 +138,7 @@ public class new_complaint extends AppCompatActivity {
     private void loadCompetentOrgan() {
         try {
             WebServiceAsync WSAsync = new WebServiceAsync();
-            String URL = URLSingleton.getURL() + "/competent-organs";
+            String URL = URLSingleton.getURL() + "/competent-organs?apikey=" + URLSingleton.getApiKey();
             String ans = WSAsync.execute(URL).get();
             JSONArray jsonArray = new JSONArray(ans);
 

@@ -75,7 +75,7 @@ public class complaints extends AppCompatActivity {
     private void loadComplaints() {
         try {
             WebServiceAsync WSAsync = new WebServiceAsync();
-            String URL = String.format(URLSingleton.getURL() + "/complaints?user_id=%s", user_id);
+            String URL = String.format(URLSingleton.getURL() + "/complaints?user_id=%s&apikey=%s", user_id, URLSingleton.getApiKey());
             String ans = WSAsync.execute(URL).get();
             JSONArray jsonArray = new JSONArray(ans);
             Gson gson = new Gson();
